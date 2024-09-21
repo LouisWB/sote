@@ -1,4 +1,7 @@
 <script setup lang='ts'>
+import { octokit} from '@/hooks/listGithub.ts'
+
+console.log(octokit)
 </script>
 
 <template>
