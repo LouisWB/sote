@@ -7,11 +7,10 @@ import Menu from './components/Menu.vue'
   <el-button>Default</el-button>
 </template>
 
-<style scoped>
-.container{
-  div{
+<style lang="postcss" scoped>
+.container {
+  div {
     color: red;
   }
 }
-
 </style>
