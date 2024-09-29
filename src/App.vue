@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import Menu from './components/Menu.vue'
+  import Menu from './components/Menu.vue';
 </script>
 
 <template>
   <Menu />
-  <el-button>Default</el-button>
+  <router-view></router-view>
 </template>
 
 <style lang="postcss" scoped>
-.container {
-  div {
-    color: red;
+  .container {
+    div {
+      color: red;
+    }
   }
-}
 </style>

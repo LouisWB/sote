@@ -1,8 +1,8 @@
 import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 import App from './App.vue';
 import './styles/index.css';
-import ElementPlus from 'element-plus';
-import 'element-plus/dist/index.css';
-import zh from 'element-plus/es/locale/lang/zh-cn';
+import router from './router/index';
+const pinia = createPinia();
 
-createApp(App).use(ElementPlus, { locale: zh, size: 'small', zIndex: 3000 }).mount('#app');
+createApp(App).use(router).use(pinia).mount('#app');

@@ -1,3 +1,9 @@
 @import url('./variables.css');
 @import url('./tailwind.css');
-@import url('./element-plus.css');
+@import url('./shadcn-ui.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: JetBrains Mono, sans-serif;
+}
