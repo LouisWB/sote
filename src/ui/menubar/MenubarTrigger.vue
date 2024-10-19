@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import { type HTMLAttributes, computed } from 'vue';
-  import { MenubarTrigger, type MenubarTriggerProps, useForwardProps } from 'radix-vue';
   import { cn } from '@/utils/shadcn-vue';
+  import { MenubarTrigger, type MenubarTriggerProps, useForwardProps } from 'radix-vue';
+  import { computed, type HTMLAttributes } from 'vue';
 
   const props = defineProps<MenubarTriggerProps & { class?: HTMLAttributes['class'] }>();
 
@@ -19,7 +19,7 @@
     v-bind="forwardedProps"
     :class="
       cn(
-        'cursor-pointer flex select-none items-center rounded-sm px-3 py-1 text-base font-medium outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground',
+        'flex cursor-default p-1 select-none items-center rounded-sm text-sm font-medium outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground',
         props.class
       )
     "

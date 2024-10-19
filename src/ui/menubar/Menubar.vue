@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import { type HTMLAttributes, computed } from 'vue';
-  import { MenubarRoot, type MenubarRootEmits, type MenubarRootProps, useForwardPropsEmits } from 'radix-vue';
   import { cn } from '@/utils/shadcn-vue';
+  import { MenubarRoot, type MenubarRootEmits, type MenubarRootProps, useForwardPropsEmits } from 'radix-vue';
+  import { computed, type HTMLAttributes } from 'vue';
 
   const props = defineProps<MenubarRootProps & { class?: HTMLAttributes['class'] }>();
   const emits = defineEmits<MenubarRootEmits>();
@@ -16,7 +16,7 @@
 </script>
 
 <template>
-  <MenubarRoot v-bind="forwarded" :class="cn('flex items-center gap-x-1 rounded-md bg-background', props.class)">
+  <MenubarRoot v-bind="forwarded" :class="cn('flex items-center gap-x-1 rounded-md border bg-background p-1', props.class)">
     <slot />
   </MenubarRoot>
 </template>
