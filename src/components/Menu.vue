@@ -3,12 +3,13 @@
   import { Avatar, AvatarFallback, AvatarImage } from '@/ui/avatar';
   import defaultAvatar from '@/assets/images/unlogged-avatar.png';
   import { ref } from 'vue';
+  import { loginGithub, logoutGithub } from '@/apis/github';
+  import { useGithubStore } from '@/stores/github';
+  import { storeToRefs } from 'pinia';
 
+  const githubStore = useGithubStore();
+  const { userInfo } = storeToRefs(githubStore);
   const unLoggedAvatar = ref(defaultAvatar);
-
-  // const handleSelect = (key: string, keyPath: string[]) => {
-  //   console.log(key, keyPath);
-  // };
 </script>
 
 <template>
@@ -27,16 +28,17 @@
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger type="plain">
-          <Avatar class="w-[20px] h-[20px]">
-            <AvatarImage :src="unLoggedAvatar" />
+        <MenubarTrigger type="plain" class="ml-auto">
+          <Avatar class="w-[20px] h-[20px] mr-2">
+            <AvatarImage :src="userInfo.avatar_url || unLoggedAvatar" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
+          {{ userInfo.login }}
         </MenubarTrigger>
         <MenubarContent>
-          <MenubarItem>登录</MenubarItem>
+          <MenubarItem @click="loginGithub">登录</MenubarItem>
           <MenubarSeparator />
-          <MenubarItem>退出</MenubarItem>
+          <MenubarItem @click="logoutGithub">退出</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>

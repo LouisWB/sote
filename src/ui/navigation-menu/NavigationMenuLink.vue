@@ -8,7 +8,7 @@
 </script>
 
 <template>
-  <NavigationMenuLink class="data-[active=true]:bg-accent" v-bind="forwarded">
+  <NavigationMenuLink class="data-[active=true]:bg-accent-foreground data-[active=true]:text-white transition" v-bind="forwarded">
     <slot />
   </NavigationMenuLink>
 </template>
